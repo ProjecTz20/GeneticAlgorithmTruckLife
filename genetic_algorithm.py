@@ -3,6 +3,7 @@ import pandas as pd
 from deap import base, creator, tools, algorithms
 from geopy.distance import great_circle
 import random
+import googlemapapi_test as gapi
 
 orderlist = [
     {"orderid": 1, "receptiondate": "2024-06-01", "latitude": 34.05, "longitude": -118.25, "desired_delivery_date": "2024-06-05", "product": 101},
@@ -101,6 +102,7 @@ def main():
     population = toolbox.population(n=50)
     hof = tools.HallOfFame(1)
 
+<<<<<<< Updated upstream
     algorithms.eaSimple(population, toolbox, cxpb=0.7, mutpb=0.2, ngen=100, halloffame=hof, verbose=True)
 
     best_individual = hof[0]
@@ -118,3 +120,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+=======
+
+
+
+# Run the Algorithm
+best_route, best_route_fitness = genetic_algorithm(orderlist, trucklist, pop_size=100, num_generations=1000)
+print("Best Route:", best_route)
+print("Best Route Fitness:", best_route_fitness)
+>>>>>>> Stashed changes
